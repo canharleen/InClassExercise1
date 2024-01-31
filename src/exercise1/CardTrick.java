@@ -26,6 +26,7 @@ public class CardTrick {
             card.setValue(random.nextInt(13)+1);
             // 
             card.setSuit(Card.SUITS[random.nextInt(4)]);
+            hand[i]=card;
             // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
             //       Don't worry about duplicates at this point
         }
@@ -55,8 +56,12 @@ public class CardTrick {
         for (Card hand1 : hand) {
             
             System.out.println(hand1);
-            if (userCard.equals(hand1)) {
-                printInfo();  
+            if (userCard.getSuit()==hand1.getSuit()){
+                if (userCard.getValue()==hand1.getValue()){
+                    
+                printInfo();
+                break;
+                }
             }
         }
         
